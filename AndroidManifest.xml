@@ -3,18 +3,18 @@
       package="com.livegather.android"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name="LiveGatherApplication">
-        <activity android:label="@string/app_name" android:name="StartupActivity">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name=".LiveGatherApplication">
+        <activity android:label="@string/app_name" android:name=".activity.StartupActivity">
 	        <intent-filter>
 	        	<action android:name="android.intent.action.MAIN"></action>
 				<category android:name="android.intent.category.LAUNCHER"></category>
 			</intent-filter>
 		</activity>
-		<activity android:name=".LoginActivity"></activity>
-		<activity android:name=".CreateAccountActivity"></activity>
-		<activity android:name=".ChangePasswordActivity"></activity>
+		<activity android:name=".activity.LoginActivity"></activity>
+		<activity android:name=".activity.CreateAccountActivity"></activity>
+		<activity android:name=".activity.LandingActivity"></activity>
 	</application>
 
 
-
+	<uses-permission android:name="android.permission.INTERNET" /> 
 </manifest> 

@@ -5,7 +5,6 @@
     android:layout_height="fill_parent"
     android:clickable="true">
 
-<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/LoginButton" android:text="@string/Login"></Button>
-<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/ChangePassword" android:text="@string/ChangePassword"></Button>
-<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/CreateAccountButton" android:text="@string/CreateAccount"></Button>
+	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/LoginButton" android:text="@string/Login"></Button>
+	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/CreateAccountButton" android:text="@string/CreateAccount"></Button>
 </LinearLayout>

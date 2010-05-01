@@ -5,9 +5,10 @@
     android:layout_height="fill_parent"
     android:clickable="true">
 
-	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Username" android:text="@string/Username"></EditText>
-	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Password" android:text="@string/Password"></EditText>
-	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Age" android:text="@string/Age"></EditText>
-	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Email" android:text="@string/Email"></EditText>
-	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Submit" android:id="@+id/Submit"></Button>
+	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Username" android:hint="@string/DisplayName"></EditText>
+	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Password" android:hint="@string/Password"></EditText>
+	<DatePicker android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/DateOfBirthPicker" />
+	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Email" android:hint="@string/Email"></EditText>
+	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Location" android:hint="@string/Location"></EditText>
+	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Submit" android:id="@+id/SubmitButton"></Button>
 </LinearLayout>

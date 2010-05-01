@@ -2,12 +2,14 @@
 <resources>
     <string name="Submit">Submit</string>
     <string name="Password">Password</string>
+    <string name="DisplayName">Display Name</string>
     <string name="Username">Username</string>
     <string name="hello">Hello World, Startup!</string>
-    <string name="app_name"></string>
+    <string name="app_name">LiveGather Android</string>
 	<string name="Login">Login</string>
 	<string name="ChangePassword">Change Password</string>
 	<string name="CreateAccount">Create Account</string>
-	<string name="Age">Age</string>
+	<string name="DateOfBirth">Date of Birth</string>
 	<string name="Email">Email</string>
+	<string name="Location">Location</string>
 </resources>

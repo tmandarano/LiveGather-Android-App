@@ -8,7 +8,7 @@
 
 
 
-<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Username" android:text="@string/Username"></EditText>
-<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Password" android:text="@string/Password"></EditText>
-<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Submit" android:id="@+id/Submit"></Button>
+	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Username" android:hint="@string/Username"></EditText>
+	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Password" android:hint="@string/Password"></EditText>
+	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/SubmitButton" android:text="@string/Submit"></Button>
 </LinearLayout>
