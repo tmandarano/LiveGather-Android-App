@@ -5,26 +5,33 @@
     android:layout_height="fill_parent"
     android:clickable="true">
 
-
-
-
-	<EditText android:id="@+id/username"
+	<EditText android:id="@+id/caption" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:hint="@string/username">
+		android:hint="@string/caption">
 	</EditText>
-	<EditText android:id="@+id/password"
+	<EditText android:id="@+id/comments" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:hint="@string/password">
+		android:hint="@string/comments">
 	</EditText>
-	<TextView android:id="@+id/status"
+	<EditText android:id="@+id/tags" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:text=""/>
-	<Button android:id="@+id/submitButton"
+		android:hint="@string/tags">
+	</EditText>
+	<Button	android:id="@+id/submitButton"
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
 		android:text="@string/submit">
 	</Button>
+	<Button	android:id="@+id/capture"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:text="@string/takePhoto">
+	</Button>
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frame" />	
 </LinearLayout>

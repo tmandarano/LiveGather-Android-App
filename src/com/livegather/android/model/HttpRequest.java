@@ -6,7 +6,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Map;
 
 import org.apache.http.HttpEntity;
@@ -31,11 +30,11 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
-public class RestClient {
+public class HttpRequest {
     private DefaultHttpClient httpClient;
     private HttpContext localContext;
 
-    private HttpResponse response = null;
+    HttpResponse response = null;
     HttpPost httpPost = null;
     HttpGet httpGet = null;
     
@@ -45,11 +44,7 @@ public class RestClient {
     	return this.json;
     }
 
-    public HttpResponse getResponse() {
-    	return this.response;
-    }
-
-    public RestClient() {
+    public HttpRequest() {
         HttpParams myParams = new BasicHttpParams();
 
         HttpConnectionParams.setConnectionTimeout(myParams, 10000);
@@ -69,7 +64,7 @@ public class RestClient {
                 httpPost.abort();
             }
         } catch (Exception e) {
-            System.out.println("RestClient" + e);
+            System.out.println("Your App Name Here" + e);
         }
     }
 
@@ -83,30 +78,19 @@ public class RestClient {
 		httpClient.getCredentialsProvider().setCredentials(authscope, creds);
 		JSONObject data = new JSONObject(params);
     	
-		URI fullUri = null;
-		try {
-			// In addition to the main URI we also need the URI to the actual 
-			// call being made
-			fullUri = new URI(uri.toString() + path);
-		} catch (URISyntaxException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		
         String ret = null;
 
         httpClient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.RFC_2109);
 
-        httpPost = new HttpPost(fullUri);
+        httpPost = new HttpPost(uri);
         response = null;
 
         StringEntity tmp = null;        
 
-        Log.d("RestClient", "Setting httpPost headers");
+        Log.d("Your App Name Here", "Setting httpPost headers");
 
         httpPost.setHeader("User-Agent", "SET YOUR USER AGENT STRING HERE");
-        httpPost.setHeader("Accept", "application/json");
+        httpPost.setHeader("Accept", "text/html,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5");
 
         if (contentType != null) {
             httpPost.setHeader("Content-Type", contentType);
@@ -117,61 +101,49 @@ public class RestClient {
         try {
             tmp = new StringEntity(data.toString(), "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            Log.e("RestClient", "HttpUtils : UnsupportedEncodingException : "+e);
+            Log.e("Your App Name Here", "HttpUtils : UnsupportedEncodingException : "+e);
         }
 
         httpPost.setEntity(tmp);
 
-        Log.d("RestClient", fullUri + "?" + data);
+        Log.d("Your App Name Here", uri + "?" + data);
 
         try {
             response = httpClient.execute(httpPost,localContext);
 
             if (response != null) {
+                this.json = readJSONObject(response);
                 ret = EntityUtils.toString(response.getEntity());
-                Log.d("RestClient", "Returning value:" + ret);
-            }
-            if (response != null && response.getStatusLine().getStatusCode() != 401) {
-                this.json = new JSONObject(ret);
             }
         } catch (Exception e) {
-            Log.e("RestClient", "HttpUtils: " + e);
+            Log.e("Your App Name Here", "HttpUtils: " + e);
         }
 
-        Log.d("RestClient", "Returning value:" + ret);
+        Log.d("Your App Name Here", "Returning value:" + ret);
 
         return ret;
     }
 
-    public String sendGet(URI uri, String path, Map<String, String> params) {
-		Credentials creds = new UsernamePasswordCredentials(params.get("username"), params.get("password"));
+    public String sendGet(URI uri, String username, String password) {
+        httpGet = new HttpGet(uri);  
+		Credentials creds = new UsernamePasswordCredentials(username, password);
 		AuthScope authscope = new AuthScope(uri.getHost(), uri.getPort());
 		httpClient.getCredentialsProvider().setCredentials(authscope, creds);
 
-		URI fullUri = null;
-		try {
-			// In addition to the main URI we also need the URI to the actual 
-			// call being made
-			fullUri = new URI(uri.toString() + path);
-		} catch (URISyntaxException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
-		try {
+        try {
             response = httpClient.execute(httpGet);  
         } catch (Exception e) {
-            Log.e("RestClient", e.getMessage());
+            Log.e("Your App Name Here", e.getMessage());
         }
 
-        httpGet = new HttpGet(fullUri);  
+        //int status = response.getStatusLine().getStatusCode();  
 
         String ret = null;
         // we assume that the response body contains the error message  
         try {
             ret = EntityUtils.toString(response.getEntity());  
         } catch (IOException e) {
-            Log.e("RestClient", e.getMessage());
+            Log.e("Your App Name Here", e.getMessage());
         }
 
         return ret;

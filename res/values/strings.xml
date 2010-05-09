@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Submit">Submit</string>
-    <string name="Password">Password</string>
-    <string name="DisplayName">Display Name</string>
-    <string name="Username">Username</string>
+    <string name="submit">Submit</string>
+    <string name="password">Password</string>
+    <string name="displayName">Display Name</string>
+    <string name="username">Username</string>
     <string name="hello">Hello World, Startup!</string>
     <string name="app_name">LiveGather Android</string>
-	<string name="Login">Login</string>
-	<string name="ChangePassword">Change Password</string>
-	<string name="CreateAccount">Create Account</string>
-	<string name="DateOfBirth">Date of Birth</string>
-	<string name="Email">Email</string>
-	<string name="Location">Location</string>
+	<string name="login">Login</string>
+	<string name="changePassword">Change Password</string>
+	<string name="createAccount">Create Account</string>
+	<string name="dateOfBirth">Date of Birth</string>
+	<string name="email">Email</string>
+	<string name="location">Location</string>
+	<string name="caption">Caption</string>
+	<string name="comments">Comments</string>
+	<string name="tags">Tags</string>
+	<string name="uploadPicture">Upload Picture</string>
+	<string name="shared">Save to Shared Library</string>
+	<string name="takePhoto">Take Photo</string>
 </resources>

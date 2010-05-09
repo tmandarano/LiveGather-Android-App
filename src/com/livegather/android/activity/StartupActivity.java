@@ -1,8 +1,6 @@
 package com.livegather.android.activity;
 
 import com.livegather.android.R;
-import com.livegather.android.R.id;
-import com.livegather.android.R.layout;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,9 +17,9 @@ public class StartupActivity extends Activity implements OnClickListener {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.main);
 	    
-	    Button loginButton = (Button) findViewById(R.id.LoginButton);
+	    Button loginButton = (Button) findViewById(R.id.loginButton);
 	    loginButton.setOnClickListener(this);
-	    Button createAccountButton = (Button) findViewById(R.id.CreateAccountButton);
+	    Button createAccountButton = (Button) findViewById(R.id.createAccountButton);
 	    createAccountButton.setOnClickListener(this);
 	}
 	
@@ -29,11 +27,11 @@ public class StartupActivity extends Activity implements OnClickListener {
 	{
 		switch(view.getId())
 		{
-		case R.id.LoginButton:
+		case R.id.loginButton:
 			Intent loginIntent = new Intent(view.getContext(), LoginActivity.class);
 			startActivityForResult(loginIntent, 0);
 			break;
-		case R.id.CreateAccountButton:
+		case R.id.createAccountButton:
 			Intent createAccountIntent = new Intent(view.getContext(), CreateAccountActivity.class);
 			startActivityForResult(createAccountIntent, 0);
 			break;

@@ -5,10 +5,39 @@
     android:layout_height="fill_parent"
     android:clickable="true">
 
-	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Username" android:hint="@string/DisplayName"></EditText>
-	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Password" android:hint="@string/Password"></EditText>
-	<DatePicker android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/DateOfBirthPicker" />
-	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Email" android:hint="@string/Email"></EditText>
-	<EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Location" android:hint="@string/Location"></EditText>
-	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Submit" android:id="@+id/SubmitButton"></Button>
+	<EditText android:id="@+id/username" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:hint="@string/displayName">
+	</EditText>
+	<EditText android:id="@+id/password" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:inputType="textPassword"
+		android:hint="@string/password">
+	</EditText>
+    <TextView android:id="@+id/dateDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""/>
+    <Button android:id="@+id/pickDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Birthday"/>
+	<EditText android:id="@+id/email" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:inputType="textEmailAddress"
+		android:hint="@string/email">
+	</EditText>
+	<EditText android:id="@+id/location" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:hint="@string/location">
+	</EditText>
+	<Button	android:id="@+id/submitButton"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:text="@string/submit">
+	</Button>
 </LinearLayout>

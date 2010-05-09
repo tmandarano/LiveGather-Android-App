@@ -1,17 +1,17 @@
 package com.livegather.android.model;
 
 public class User {
-	private String fullname;
+	private String username;
 	private String email;
 	private String password;
 	private String dateOfBirth;
 	private String location;
 
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getFullname() {
-		return fullname;
+	public String getUsername() {
+		return username;
 	}
 	
 	public void setEmail(String email) {
