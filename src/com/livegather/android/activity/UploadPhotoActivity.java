@@ -54,7 +54,7 @@ public class UploadPhotoActivity extends Activity implements OnClickListener {
 		params.put("username", user.getUsername());
 		params.put("password", user.getPassword());
 		
-		String ret = restclient.sendJSONPost(uri, "/photos/create", params);
+		String ret = restclient.sendJSONPost(uri, "/photos/", params);
 
 //		if(ret != null && ! ret.equals("")) {
 //			JSONObject json = restclient.getJson();
