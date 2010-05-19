@@ -73,12 +73,19 @@ public class RestClient {
         }
     }
 
-    public String sendJSONPost(URI uri, String path, Map<String, String> params) {
-    	return sendPost(uri, path, params, "application/json");
+    public String sendJSONPost(URI uri, String path, Map<String, String> params, boolean systemAuth) {
+    	return sendPost(uri, path, params, "application/json", systemAuth);
     }
     
-    public String sendPost(URI uri, String path, Map<String, String> params, String contentType) {
-		Credentials creds = new UsernamePasswordCredentials(params.get("username"), params.get("password"));
+    public String sendPost(URI uri, String path, Map<String, String> params, String contentType, boolean systemAuth) {
+    	String username = params.get("username");
+    	String password = params.get("password");
+    	if(systemAuth) {
+			username = params.get("sys_username");
+			password = params.get("sys_password");
+		}
+    	
+    	Credentials creds = new UsernamePasswordCredentials(username, password);
 		AuthScope authscope = new AuthScope(uri.getHost(), uri.getPort());
 		httpClient.getCredentialsProvider().setCredentials(authscope, creds);
 		JSONObject data = new JSONObject(params);

@@ -8,28 +8,31 @@
 	<EditText android:id="@+id/caption" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:hint="@string/caption">
-	</EditText>
+		android:hint="@string/caption"
+		android:singleLine="true"
+		android:ems="12" />
 	<EditText android:id="@+id/comments" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:hint="@string/comments">
-	</EditText>
+		android:hint="@string/comments"
+		android:singleLine="true"
+		android:ems="12" />
 	<EditText android:id="@+id/tags" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:hint="@string/tags">
-	</EditText>
+		android:hint="@string/tags"
+		android:singleLine="true"
+		android:ems="12" />
 	<Button	android:id="@+id/submitButton"
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:text="@string/submit">
-	</Button>
+		android:text="@string/submit"
+		android:ems="7" />
 	<Button	android:id="@+id/capture"
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:text="@string/takePhoto">
-	</Button>
+		android:text="@string/takePhoto"
+		android:ems="7" />
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

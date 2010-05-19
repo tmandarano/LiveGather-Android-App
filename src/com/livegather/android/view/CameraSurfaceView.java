@@ -3,9 +3,11 @@ package com.livegather.android.view;
 import java.io.IOException;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.hardware.Camera;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.WindowManager;
 
 public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
 	private SurfaceHolder holder;
@@ -32,6 +34,8 @@ public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Call
 		int format, int width, int height) {
 		Camera.Parameters params = camera.getParameters();
 //		params.setPreviewSize(width, height);
+		
+
 		camera.setParameters(params);
 		camera.startPreview();
 	}

@@ -60,7 +60,7 @@ public class LoginActivity extends AbstractRestActivity implements OnClickListen
 		RestClient restclient = new RestClient();
 		URI uri = ((LiveGatherApplication) this.getApplication()).getUri();
 
-		String ret = restclient.sendJSONPost(uri, "/sessions/", params);
+		String ret = restclient.sendJSONPost(uri, "/sessions/", params, false);
 
 		if(ret != null && restclient.getResponse().getStatusLine().getStatusCode() != 401) {
 			User user = new User();

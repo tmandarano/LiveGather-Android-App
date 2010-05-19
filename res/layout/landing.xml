@@ -7,10 +7,11 @@
 
 	<TextView android:id="@+id/status"
 		android:layout_width="wrap_content" 
-		android:layout_height="wrap_content" />
+		android:layout_height="wrap_content" 
+		android:textSize="20sp" />
 	<Button	android:id="@+id/uploadPicture"
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:text="@string/uploadPicture">
-	</Button>
+		android:text="@string/uploadPicture"
+		android:ems="12" />
 </LinearLayout>

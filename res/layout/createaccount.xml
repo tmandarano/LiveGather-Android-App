@@ -8,36 +8,42 @@
 	<EditText android:id="@+id/username" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:hint="@string/displayName">
-	</EditText>
+		android:hint="@string/displayName"
+		android:singleLine="true"
+		android:ems="12" />
 	<EditText android:id="@+id/password" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
 		android:inputType="textPassword"
-		android:hint="@string/password">
-	</EditText>
+		android:hint="@string/password"
+		android:singleLine="true"
+		android:ems="12" />
     <TextView android:id="@+id/dateDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textSize="20sp" />
     <Button android:id="@+id/pickDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Birthday"/>
+        android:text="Enter Birthday" 
+		android:ems="7" />
 	<EditText android:id="@+id/email" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
 		android:inputType="textEmailAddress"
-		android:hint="@string/email">
-	</EditText>
+		android:hint="@string/email"
+		android:singleLine="true"
+		android:ems="12" />
 	<EditText android:id="@+id/location" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:hint="@string/location">
-	</EditText>
+		android:hint="@string/location"
+		android:singleLine="true"
+		android:ems="12" />
 	<Button	android:id="@+id/submitButton"
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:text="@string/submit">
-	</Button>
+		android:text="@string/submit"
+		android:ems="7" />
 </LinearLayout>

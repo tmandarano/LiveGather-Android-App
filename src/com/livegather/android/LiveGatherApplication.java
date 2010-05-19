@@ -10,6 +10,8 @@ import android.app.Application;
 public class LiveGatherApplication extends Application {
 	private User user;
 	private URI uri;
+	private String systemUsername;
+	private String systemPassword;
 
 	/**
 	 * An application in Android is a singleton and is fired up when the app is. 
@@ -20,7 +22,10 @@ public class LiveGatherApplication extends Application {
 	public LiveGatherApplication() {
 		// For now create a URI so we only need to do this in one location
 		try {
-			this.uri = new URI("http://192.168.1.111:80");
+// 			this.uri = new URI("http://192.168.1.111:80");
+			this.uri = new URI("http://dev.livegather.com");
+			this.systemUsername = "projc";
+			this.systemPassword = "pr0j(";
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,6 +42,22 @@ public class LiveGatherApplication extends Application {
 
 	public URI getUri() {
 		return this.uri;
+	}
+
+	public void setSystemUsername(String systemUsername) {
+		this.systemUsername = systemUsername;
+	}
+
+	public String getSystemUsername() {
+		return systemUsername;
+	}
+
+	public void setSystemPassword(String systemPassword) {
+		this.systemPassword = systemPassword;
+	}
+
+	public String getSystemPassword() {
+		return systemPassword;
 	}
 
 }

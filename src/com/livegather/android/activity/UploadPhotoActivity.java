@@ -4,19 +4,8 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.livegather.android.LiveGatherApplication;
-import com.livegather.android.R;
-import com.livegather.android.model.RestClient;
-import com.livegather.android.model.User;
-import com.livegather.android.view.CameraSurfaceView;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.hardware.Camera;
@@ -29,6 +18,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+
+import com.livegather.android.LiveGatherApplication;
+import com.livegather.android.R;
+import com.livegather.android.model.RestClient;
+import com.livegather.android.model.User;
+import com.livegather.android.view.CameraSurfaceView;
 
 
 public class UploadPhotoActivity extends Activity implements OnClickListener {
@@ -54,8 +49,10 @@ public class UploadPhotoActivity extends Activity implements OnClickListener {
 		params.put("username", user.getUsername());
 		params.put("password", user.getPassword());
 		
-		String ret = restclient.sendJSONPost(uri, "/photos/", params);
+		String ret = restclient.sendJSONPost(uri, "/photos/", params, false);
 
+		
+		
 //		if(ret != null && ! ret.equals("")) {
 //			JSONObject json = restclient.getJson();
 //			

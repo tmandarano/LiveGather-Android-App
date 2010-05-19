@@ -97,7 +97,13 @@ public class CreateAccountActivity extends AbstractRestActivity implements OnCli
 		RestClient restclient = new RestClient();
 		URI uri = ((LiveGatherApplication) this.getApplication()).getUri();
 
-		String ret = restclient.sendJSONPost(uri, "/users/", params);
+		String username = ((LiveGatherApplication) this.getApplication()).getSystemUsername();
+		String password = ((LiveGatherApplication) this.getApplication()).getSystemPassword();
+
+		params.put("sys_username", username);
+		params.put("sys_password", password);
+
+		String ret = restclient.sendJSONPost(uri, "/users/", params, true);
 
 		if(ret != null && ! ret.equals("")) {
 			JSONObject json = restclient.getJson();
